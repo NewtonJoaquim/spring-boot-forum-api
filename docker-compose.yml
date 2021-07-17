@@ -1,0 +1,14 @@
+version: '3'
+services:
+  alura-forum:
+    restart: always
+    build: .
+    ports:
+      - '8080:8080'
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - FORUM_DATABASE_URL=jdbc:h2:mem:alura-forum-test
+      - FORUM_DATABASE_USERNAME=sa
+      - FORUM_DATABASE_PASSWORD=
+      - FORUM_JWT_SECRET=123456
+      - PORT=8080
